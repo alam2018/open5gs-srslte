@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 
 MAINTAINER Md Ashraful Alam <anjonbd@yahoo.com>
 
-ENV DEBIAN_FRONTEND noninteractive
+#ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Dependencies for the UHD driver for the USRP hardware
 RUN apt-get update && apt-get -yq install cmake git libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev libuhd-dev iproute2 libzmq3-dev libtool autoconf iptables net-tools
@@ -16,7 +17,7 @@ RUN apt-get update && \
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
-RUN apt install open5gs
+RUN apt install -y open5gs
 
 #WORKDIR /root
 #COPY setup.sh /root
