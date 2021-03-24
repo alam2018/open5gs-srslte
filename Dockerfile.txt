@@ -17,7 +17,7 @@ RUN apt-get update && \
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
-RUN apt --yes install open5gs
+RUN apt -y install open5gs
 
 #WORKDIR /root
 #COPY setup.sh /root
