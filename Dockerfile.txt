@@ -12,12 +12,14 @@ RUN apt-get update && \
    apt-get -yq dist-upgrade && \
    apt-get --no-install-recommends -qqy install python3-pip python3-setuptools python3-wheel ninja-build build-essential flex bison git libsctp-dev libgnutls28-dev libgcrypt-dev libssl-dev \
    libidn11-dev libmongoc-dev libbson-dev libyaml-dev libmicrohttpd-dev libcurl4-gnutls-dev meson iproute2 libnghttp2-dev \
-   iptables iputils-ping tcpdump cmake curl gnupg meson && \ 
-   git clone --recursive https://github.com/open5gs/open5gs && \
-   cd open5gs && meson build --prefix=/ && ninja -C build && cd build && ninja install
+   iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common 
+ 
+RUN add-apt-repository ppa:open5gs/latest
+RUN apt update
+RUN apt install open5gs
 
-WORKDIR /root
-COPY setup.sh /root
+#WORKDIR /root
+#COPY setup.sh /root
 
 
 
@@ -33,4 +35,4 @@ COPY setup.sh /root
 #ADD launcher2.sh /
 
 # Run the launcher script
-#ENTRYPOINT ["bash","/launcher2.sh"]
+ENTRYPOINT ["bash","/setup.sh"]
