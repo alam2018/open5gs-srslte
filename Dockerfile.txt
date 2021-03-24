@@ -36,4 +36,4 @@ RUN apt -y install open5gs
 ADD setup.sh /
 
 # Run the launcher script
-ENTRYPOINT ["bash","/setup.sh"]
+#ENTRYPOINT ["bash","/setup.sh"]
