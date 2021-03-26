@@ -53,7 +53,8 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 # Install anything. The service you want to start must be a SystemD service.
 
-#CMD ["/usr/sbin/init"]
+VOLUME [ “/sys/fs/cgroup” ]
+CMD [“/usr/sbin/init”]
 
 # Run the launcher script
 #ENTRYPOINT ["bash","/setup.sh"]
