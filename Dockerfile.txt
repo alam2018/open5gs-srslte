@@ -17,7 +17,7 @@ RUN apt-get update && \
 
 RUN apt -y install snapd
 RUN apt-get update 
-RUN snap -y install systemd-manager --beta
+RUN snap install systemd-manager --beta
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
