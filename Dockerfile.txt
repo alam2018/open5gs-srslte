@@ -15,10 +15,10 @@ RUN apt-get update && \
    libidn11-dev libmongoc-dev libbson-dev libyaml-dev libmicrohttpd-dev libcurl4-gnutls-dev meson iproute2 libnghttp2-dev \
    iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd
 
-RUN apt -y install snapd
-RUN apt-get update 
-RUN systemctl status snapd.service
-RUN snap install systemd-manager --beta
+#RUN apt -y install snapd
+#RUN apt-get update 
+#RUN systemctl status snapd.service
+#RUN snap install systemd-manager --beta
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
@@ -53,7 +53,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 # Install anything. The service you want to start must be a SystemD service.
 
-CMD ["/usr/sbin/init"]
+#CMD ["/usr/sbin/init"]
 
 # Run the launcher script
 #ENTRYPOINT ["bash","/setup.sh"]
