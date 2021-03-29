@@ -29,7 +29,7 @@ RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
 RUN apt -y install open5gs
 
-ADD /conf/mme.yml /
+ADD /conf/mme.yaml /
 
 #WORKDIR /root
 #COPY setup.sh /root
