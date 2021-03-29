@@ -20,9 +20,7 @@ RUN apt-get update && \
 #RUN systemctl status snapd.service
 #RUN snap install systemd-manager --beta
 
-ADD setup.sh /
-RUN chmod +x setup.sh
-CMD ["./setup.sh"]
+
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
@@ -31,7 +29,9 @@ RUN apt -y install open5gs
 #WORKDIR /root
 #COPY setup.sh /root
 
-
+ADD setup.sh /
+RUN chmod +x setup.sh
+CMD ["./setup.sh"]
 
 # Add Kubernetes launch scripts
 #ADD dns_replace.sh /
