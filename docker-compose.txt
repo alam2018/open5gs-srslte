@@ -4,9 +4,9 @@ services:
   run:
     network_mode: "host"
     image: ${USER}/${DIST-ubuntu}-${TAG-latest}-open5gs-build
-    depends_on:
-      - mongodb
-      - build
+#    depends_on:
+#      - mongodb
+#      - build
     cap_add:
       - NET_ADMIN
     devices:
