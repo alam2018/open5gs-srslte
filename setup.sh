@@ -13,5 +13,5 @@ ip link set ogstun up
 #sudo systemctl restart open5gs-mmed
 #sudo systemctl restart open5gs-sgwud
 
-child=$!
-wait "$child"
+#child=$!
+#wait "$child"
