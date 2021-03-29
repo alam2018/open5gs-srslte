@@ -21,7 +21,7 @@ RUN apt-get update && \
 #RUN snap install systemd-manager --beta
 
 ADD setup.sh /
-RUN chmod +x .setup.sh
+RUN chmod +x setup.sh
 CMD ["./setup.sh"]
  
 RUN add-apt-repository ppa:open5gs/latest
