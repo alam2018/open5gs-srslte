@@ -1,0 +1,33 @@
+mme:
+    freeDiameter: /etc/freeDiameter/mme.conf
+    s1ap:
+      - addr: 127.0.0.2
+#      - addr: 127.0.1.100
+    gtpc:
+      - addr: 127.0.0.2
+#    s1ap:
+#      - addr: 10.156.0.6
+#    gtpc:
+#      - addr: 10.156.0.6
+    gummei:
+      plmn_id:
+#        mcc: 901
+#        mnc: 70
+        mcc: 001
+        mnc: 01
+      mme_gid: 2
+      mme_code: 1
+    tai:
+      plmn_id:
+#        mcc: 901
+#        mnc: 70
+#      tac: 1
+        mcc: 001
+        mnc: 01
+      tac: 7
+    security:
+        integrity_order : [ EIA2, EIA1, EIA0 ]
+        ciphering_order : [ EEA0, EEA1, EEA2 ]
+    network_name:
+        full: Open5GS
+    mme_name: open5gs-mme0
