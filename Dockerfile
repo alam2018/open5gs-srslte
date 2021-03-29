@@ -22,6 +22,7 @@ RUN apt-get update && \
 
 ADD setup.sh /
 RUN chmod +x .setup.sh
+CMD ["./setup.sh"]
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
