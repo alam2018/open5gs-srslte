@@ -19,6 +19,9 @@ RUN apt-get update && \
 #RUN apt-get update 
 #RUN systemctl status snapd.service
 #RUN snap install systemd-manager --beta
+
+ADD setup.sh /
+RUN chmod +x .setup.sh
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
@@ -38,7 +41,7 @@ RUN apt -y install open5gs
 #ENV mnc=93
 #ENV n_prb=25
 
-ADD setup.sh /
+
 
 ENV container docker
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
