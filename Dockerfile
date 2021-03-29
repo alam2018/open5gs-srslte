@@ -31,7 +31,7 @@ RUN apt -y install open5gs
 
 ADD setup.sh /
 RUN chmod +x setup.sh
-CMD ["./setup.sh"]
+#CMD ["./setup.sh"]
 
 # Add Kubernetes launch scripts
 #ADD dns_replace.sh /
@@ -61,7 +61,8 @@ VOLUME [ “/sys/fs/cgroup” ]
 #CMD [“/usr/sbin/init”]
 
 # Run the launcher script
-#ENTRYPOINT ["bash","/setup.sh"]
+ADD run.sh /
+ENTRYPOINT ["bash","/run.sh"]
 
 ADD cmd.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/cmd.sh
