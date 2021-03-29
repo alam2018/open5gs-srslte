@@ -208,10 +208,10 @@ logger:
 mme:
     freeDiameter: /etc/freeDiameter/mme.conf
     s1ap:
-      - addr: 127.0.0.2
-#      - addr: 127.0.1.100
+#      - addr: 127.0.0.2
+      - addr: 172.17.0.1
     gtpc:
-      - addr: 127.0.0.2
+      - addr: 172.17.0.1
 #    s1ap:
 #      - addr: 10.156.0.6
 #    gtpc:
