@@ -1,45 +1,28 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
-kind: StatefulSet
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: open5gs-mme-deployment
-  annotations:
-    "cni.projectcalico.org/ipAddrs": "[\"192.168.230.26\"]"
-#  namespace: open5gs
+  name: epc-deployment
   labels:
-    epc-mode: mme
+    app: epc
 spec:
   replicas: 1
-#  serviceName: "open5gs-mme-svc-pool"
   selector:
     matchLabels:
-      epc-mode: mme
+      app: epc
   template:
     metadata:
       labels:
-        epc-mode: mme
+        app: epc
     spec:
       containers:
-        - name: mme
+        - name: cepc
+#Use this image when you want to download from github repository
+#          image: cloudorc/srslte-epc:latest
+#For this, docker image needs to built locally at worker node
           image: e2e-network
           imagePullPolicy: Never
-#          imagePullPolicy: Always
           securityContext:
             capabilities:
               add:
                 - NET_ADMIN
-            privileged: true
-#          command: ["open5gs-mmed", "-c", "/open5gs/config-map/mme.yaml"]
-#          volumeMounts:
-#          - name: open5gs-mme-config
-#            mountPath: /open5gs/config-map/mme.yaml
-#            subPath: "mme.yaml"
-#          - name: open5gs-mme-diameter
-#            mountPath: /open5gs/config-map/diameter-mme.conf
-#            subPath: "diameter-mme.conf"             
-#      volumes:
-#        - name: open5gs-mme-config
-#          configMap:
-#            name: open5gs-mme-config
-#        - name: open5gs-mme-diameter
-#          configMap:
-#            name: open5gs-mme-diameter            
+            privileged: true         
