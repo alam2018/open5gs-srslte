@@ -41,7 +41,13 @@ spec:
       containers:
         - name: mme
           image: e2e-network
-          imagePullPolicy: Always
+          imagePullPolicy: Never
+#          imagePullPolicy: Always
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
+            privileged: true
 #          command: ["open5gs-mmed", "-c", "/open5gs/config-map/mme.yaml"]
 #          volumeMounts:
 #          - name: open5gs-mme-config
