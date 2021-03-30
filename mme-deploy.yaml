@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-mme-svc-pool
+  namespace: open5gs
+  labels:
+    epc-mode: mme
+spec:
+  type: NodePort
+  ports:
+#  - name: s1ap
+#    port: 36412
+#    protocol: SCTP
+#    nodePort: 36412
+  - name: s6a
+    port: 3868
+    protocol: TCP    
+  selector:
+    epc-mode: mme    
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: open5gs-mme-deployment
+  annotations:
+    "cni.projectcalico.org/ipAddrs": "[\"192.168.230.26\"]"
+  namespace: open5gs
+  labels:
+    epc-mode: mme
+spec:
+  replicas: 1
+  serviceName: "open5gs-mme-svc-pool"
+  selector:
+    matchLabels:
+      epc-mode: mme
+  template:
+    metadata:
+      labels:
+        epc-mode: mme
+    spec:
+      containers:
+        - name: mme
+          image: e2e-network
+          imagePullPolicy: Always
+#          command: ["open5gs-mmed", "-c", "/open5gs/config-map/mme.yaml"]
+#          volumeMounts:
+#          - name: open5gs-mme-config
+#            mountPath: /open5gs/config-map/mme.yaml
+#            subPath: "mme.yaml"
+#          - name: open5gs-mme-diameter
+#            mountPath: /open5gs/config-map/diameter-mme.conf
+#            subPath: "diameter-mme.conf"             
+#      volumes:
+#        - name: open5gs-mme-config
+#          configMap:
+#            name: open5gs-mme-config
+#        - name: open5gs-mme-diameter
+#          configMap:
+#            name: open5gs-mme-diameter            
