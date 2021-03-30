@@ -24,7 +24,7 @@ metadata:
   name: open5gs-mme-deployment
   annotations:
     "cni.projectcalico.org/ipAddrs": "[\"192.168.230.26\"]"
-  namespace: open5gs
+#  namespace: open5gs
   labels:
     epc-mode: mme
 spec:
