@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: pod
+kind: Deployment
 metadata:
   name: epc-deployment
   labels:
@@ -23,4 +23,9 @@ spec:
             capabilities:
               add:
                 - NET_ADMIN
-#            privileged: true         
+#            privileged: true    
+          resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+ 
