@@ -16,10 +16,11 @@ spec:
     spec:
       containers:
         - name: cepc
-          image: e2e-network:latest
+#          image: e2e-network:latest
+          image: ubuntu:latest
           imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
               add:
                 - NET_ADMIN
-            privileged: true         
+#            privileged: true         
