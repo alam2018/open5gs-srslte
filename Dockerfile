@@ -35,7 +35,7 @@ ADD /conf/mme.yaml /etc/open5gs/
 #COPY setup.sh /root
 
 ADD setup.sh /
-RUN chmod +x setup.sh
+#RUN chmod +x setup.sh
 #CMD ["./setup.sh"]
 
 # Add Kubernetes launch scripts
