@@ -16,11 +16,8 @@ spec:
     spec:
       containers:
         - name: cepc
-#Use this image when you want to download from github repository
-#          image: cloudorc/srslte-epc:latest
-#For this, docker image needs to built locally at worker node
           image: e2e-network:latest
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
               add:
