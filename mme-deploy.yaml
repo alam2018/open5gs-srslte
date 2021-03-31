@@ -1,31 +1,31 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: epc-deployment
+  creationTimestamp: null
   labels:
-    app: epc
+    app: open5gs
+  name: open5gs-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: epc
+      app: open5gs
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: epc
+        app: open5gs
     spec:
       containers:
-        - name: cepc
-#          image: e2e-network:latest
-          image: debian:latest
-          imagePullPolicy: IfNotPresent
-          securityContext:
-            capabilities:
-              add:
-                - NET_ADMIN
-#            privileged: true    
-          resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
- 
+      - image: e2e-network
+        name: open5gs-container
+        imagePullPolicy: Never
+        command: ["/bin/sleep", "3650d"]
+        resources: {}
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+          privileged: true
