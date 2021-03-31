@@ -2,8 +2,8 @@ FROM ubuntu:18.04
 
 MAINTAINER Md Ashraful Alam <anjonbd@yahoo.com>
 
-#ENV DEBIAN_FRONTEND noninteractive
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND noninteractive
+
 
 # Dependencies for the UHD driver for the USRP hardware
 RUN apt-get update && apt-get -yq install cmake git libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev libuhd-dev iproute2 libzmq3-dev libtool autoconf iptables net-tools
@@ -49,7 +49,7 @@ ADD setup.sh /
 
 
 
-ENV container docker
+#ENV container docker
 #RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
 #systemd-tmpfiles-setup.service ] || rm -f $i; done); \
 #rm -f /lib/systemd/system/multi-user.target.wants/*;\
