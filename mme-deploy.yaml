@@ -22,7 +22,7 @@ spec:
       - image: e2e-network
         name: open5gs-container
         imagePullPolicy: Never
-#        command: ["/bin/sleep", "3650d"]
+        command: ["/bin/sleep", "3650d"]
         resources: {}
         securityContext:
           capabilities:
