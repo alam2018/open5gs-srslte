@@ -14,7 +14,7 @@ spec:
 #  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
+#      creationTimestamp: null
       labels:
         app: open5gs
     spec:
@@ -24,7 +24,7 @@ spec:
         imagePullPolicy: Never
 #        command: ["/bin/sh"]
 #        args: ["/usr/bin/open5gs-mmed", "/etc/open5gs/mme.yaml"]
-        resources: {}
+#        resources: {}
         securityContext:
           capabilities:
             add:
