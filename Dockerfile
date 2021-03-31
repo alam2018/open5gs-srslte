@@ -64,12 +64,13 @@ ENV container docker
 
 VOLUME [ “/sys/fs/cgroup” ]
 #CMD [“/usr/sbin/init”]
+ADD cmd.sh /usr/local/bin/
+#RUN chmod +x /usr/local/bin/cmd.sh
 
 # Run the launcher script
 ADD run.sh /
-ENTRYPOINT ["bash","/run.sh"]
+#ENTRYPOINT ["bash","/run.sh"]
 
-ADD cmd.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/cmd.sh
+
 
 #CMD ["/usr/local/bin/cmd.sh"]
