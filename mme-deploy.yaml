@@ -17,7 +17,7 @@ spec:
       containers:
         - name: cepc
 #          image: e2e-network:latest
-          image: ubuntu:latest
+          image: debian:latest
           imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
