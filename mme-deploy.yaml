@@ -19,8 +19,8 @@ spec:
         app: open5gs
     spec:
       containers:
-      - image: ubuntu
-        name: open5gs-container
+      - image: open5gs-image
+        name: e2e-network:latest
         imagePullPolicy: Never
 #        command: ["/bin/sh"]
 #        args: ["/usr/bin/open5gs-mmed", "/etc/open5gs/mme.yaml"]
