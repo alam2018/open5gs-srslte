@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - image: open5gs-image
-        name: core-open5gs:local
+        name: e2e-network
 #        imagePullPolicy: Never
 #        command: ["/bin/sh"]
 #        args: ["/usr/bin/open5gs-mmed", "/etc/open5gs/mme.yaml"]
