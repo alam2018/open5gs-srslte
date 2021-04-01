@@ -20,11 +20,11 @@ spec:
     spec:
       containers:
       - image: open5gs-image
-        name: cloudorc/open5gs:v1
+        name: cloudorc/open5gs
 #        imagePullPolicy: Never
 #        command: ["/bin/sh"]
 #        args: ["/usr/bin/open5gs-mmed", "/etc/open5gs/mme.yaml"]
-        resources: {}
+#        resources: {}
         securityContext:
           capabilities:
             add:
