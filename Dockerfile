@@ -25,11 +25,11 @@ RUN pip3 install --user meson
 
 
  
-RUN add-apt-repository ppa:open5gs/latest
-RUN apt update
-RUN apt -y install open5gs
+#RUN add-apt-repository ppa:open5gs/latest
+#RUN apt update
+#RUN apt -y install open5gs
 
-ADD /conf/mme.yaml /etc/open5gs/
+#ADD /conf/mme.yaml /etc/open5gs/
 
 
 ADD setup.sh /
