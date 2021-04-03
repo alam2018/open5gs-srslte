@@ -34,7 +34,7 @@ ADD /conf/mme.yaml /etc/open5gs/
 
 ADD setup.sh /
 RUN chmod +x setup.sh
-CMD ["./setup.sh"]
+#CMD ["./setup.sh"]
 
 # Add Kubernetes launch scripts
 #ADD dns_replace.sh /
@@ -67,7 +67,7 @@ ADD cmd.sh /usr/local/bin/
 
 # Run the launcher script
 ADD run.sh /
-ENTRYPOINT ["bash","/run.sh"]
+#ENTRYPOINT ["bash","/run.sh"]
 
 
 
