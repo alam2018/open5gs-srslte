@@ -32,8 +32,8 @@ RUN apt-get update && \
 #ADD /conf/mme.yaml /etc/open5gs/
 
 
-ADD setup.sh /
-RUN chmod +x setup.sh
+#ADD setup.sh /
+#RUN chmod +x setup.sh
 #CMD ["./setup.sh"]
 
 # Add Kubernetes launch scripts
@@ -60,13 +60,13 @@ RUN chmod +x setup.sh
 
 # Install anything. The service you want to start must be a SystemD service.
 
-VOLUME [ “/sys/fs/cgroup” ]
+#VOLUME [ “/sys/fs/cgroup” ]
 #CMD [“/usr/sbin/init”]
-ADD cmd.sh /usr/local/bin/
+#ADD cmd.sh /usr/local/bin/
 #RUN chmod +x /usr/local/bin/cmd.sh
 
 # Run the launcher script
-ADD run.sh /
+#ADD run.sh /
 #ENTRYPOINT ["bash","/run.sh"]
 
 
