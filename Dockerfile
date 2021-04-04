@@ -15,7 +15,7 @@ RUN apt-get update && \
    libidn11-dev libmongoc-dev libbson-dev libyaml-dev libmicrohttpd-dev libcurl4-gnutls-dev meson iproute2 libnghttp2-dev \
    iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd
 
-RUN pip3 install --user meson
+#RUN pip3 install --user meson
 
 
 #RUN apt -y install snapd
