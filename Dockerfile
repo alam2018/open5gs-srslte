@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 
-MAINTAINER Md Ashraful Alam <anjonbd@yahoo.com>
+#MAINTAINER Md Ashraful Alam <anjonbd2007@gmail.com>
 
-ENV DEBIAN_FRONTEND noninteractive
+#ENV DEBIAN_FRONTEND noninteractive
 
 
 # Dependencies for the UHD driver for the USRP hardware
