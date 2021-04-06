@@ -32,7 +32,7 @@ ADD /conf/mme.yaml /etc/open5gs/
 
 ADD setup.sh /
 RUN chmod +x setup.sh
-CMD ["./setup.sh"]
+#CMD ["./setup.sh"]
 
 
 #ENV container docker
