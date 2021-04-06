@@ -16,18 +16,18 @@ RUN apt-get update && \
    iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd
 
 
-#RUN apt -y install snapd
-#RUN apt-get update 
-#RUN systemctl status snapd.service
-#RUN snap install systemd-manager --beta
+RUN apt -y install snapd
+RUN apt-get update 
+RUN systemctl status snapd.service
+RUN snap install systemd-manager --beta
 
 
  
-#RUN add-apt-repository ppa:open5gs/latest
-#RUN apt update
-#RUN apt -y install open5gs
+RUN add-apt-repository ppa:open5gs/latest
+RUN apt update
+RUN apt -y install open5gs
 
-#ADD /conf/mme.yaml /etc/open5gs/
+ADD /conf/mme.yaml /etc/open5gs/
 
 
 #ADD setup.sh /
