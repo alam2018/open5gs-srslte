@@ -16,10 +16,10 @@ RUN apt-get update && \
    iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd
 
 
-RUN apt -y install snapd
-RUN apt-get update 
-RUN systemctl status snapd.service
-RUN snap install systemd-manager --beta
+#RUN apt -y install snapd
+#RUN apt-get update 
+#RUN systemctl status snapd.service
+#RUN snap install systemd-manager --beta
 
 
  
@@ -30,19 +30,9 @@ RUN apt -y install open5gs
 ADD /conf/mme.yaml /etc/open5gs/
 
 
-#ADD setup.sh /
-#RUN chmod +x setup.sh
-#CMD ["./setup.sh"]
-
-# Add Kubernetes launch scripts
-#ADD dns_replace.sh /
-
-# Set env variables
-#ENV enb_id=0x19B
-#ENV mcc=222
-#ENV mnc=93
-#ENV n_prb=25
-
+ADD setup.sh /
+RUN chmod +x setup.sh
+CMD ["./setup.sh"]
 
 
 #ENV container docker
@@ -57,15 +47,14 @@ ADD /conf/mme.yaml /etc/open5gs/
 #rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 # Install anything. The service you want to start must be a SystemD service.
-
 #VOLUME [ “/sys/fs/cgroup” ]
 #CMD [“/usr/sbin/init”]
 #ADD cmd.sh /usr/local/bin/
 #RUN chmod +x /usr/local/bin/cmd.sh
 
 # Run the launcher script
-#ADD run.sh /
-#ENTRYPOINT ["bash","/run.sh"]
+ADD run.sh /
+ENTRYPOINT ["bash","/run.sh"]
 
 
 
