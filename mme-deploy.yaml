@@ -20,8 +20,8 @@ spec:
     spec:
       containers:
       - image: open5gs-image
-        name: cloudorc/vcore-mme
-#        imagePullPolicy: Never
+        name: vcore-mme
+        imagePullPolicy: IfNotPresent
 #        command: ["/bin/sh"]
 #        args: ["/usr/bin/open5gs-mmed", "/etc/open5gs/mme.yaml"]
 #        resources: {}
@@ -29,4 +29,4 @@ spec:
 #          capabilities:
 #            add:
 #              - NET_ADMIN
-#          privileged: true
+          privileged: true
