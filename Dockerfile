@@ -55,8 +55,8 @@ RUN chmod +x setup.sh
 # Run the launcher script
 ADD run.sh /
 RUN chmod +x run.sh
-ENTRYPOINT ["bash","/run.sh"]
-
+#ENTRYPOINT ["bash","/run.sh"]
+CMD ["./run.sh"]
 
 
 #CMD ["/usr/local/bin/cmd.sh"]
