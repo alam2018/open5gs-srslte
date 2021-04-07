@@ -25,8 +25,8 @@ spec:
 #        command: ["/bin/sh"]
 #        args: ["/usr/bin/open5gs-mmed", "/etc/open5gs/mme.yaml"]
 #        resources: {}
-#        securityContext:
-#          capabilities:
-#            add:
-#              - NET_ADMIN
-          privileged: true
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+        privileged: true
