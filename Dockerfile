@@ -31,7 +31,7 @@ ADD /conf/mme.yaml /etc/open5gs/
 
 
 ADD setup.sh /docker-entrypoint
-RUN chmod +x setup.sh
+RUN chmod +x /docker-entrypoint/setup.sh
 #CMD ["./setup.sh"]
 
 
@@ -54,7 +54,7 @@ RUN chmod +x setup.sh
 
 # Run the launcher script
 ADD run.sh /docker-entrypoint
-RUN chmod +x run.sh
+RUN chmod +x /docker-entrypoint/run.sh
 ENTRYPOINT ["bash","/docker-entrypoint/run.sh"]
 #CMD ["./run.sh"]
 
