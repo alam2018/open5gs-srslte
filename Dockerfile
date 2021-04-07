@@ -30,7 +30,7 @@ RUN apt -y install open5gs
 ADD /conf/mme.yaml /etc/open5gs/
 
 
-ADD setup.sh /docker-entrypoint
+ADD setup.sh /docker-entrypoint/
 RUN chmod +x /docker-entrypoint/setup.sh
 #CMD ["./setup.sh"]
 
