@@ -30,7 +30,7 @@ RUN apt -y install open5gs
 ADD /conf/mme.yaml /etc/open5gs/
 
 
-ADD setup.sh /
+ADD setup.sh /docker-entrypoint
 RUN chmod +x setup.sh
 #CMD ["./setup.sh"]
 
@@ -53,10 +53,10 @@ RUN chmod +x setup.sh
 #RUN chmod +x /usr/local/bin/cmd.sh
 
 # Run the launcher script
-ADD run.sh /
+ADD run.sh /docker-entrypoint
 RUN chmod +x run.sh
-#ENTRYPOINT ["bash","/run.sh"]
-CMD ["./run.sh"]
+ENTRYPOINT ["bash","/run.sh"]
+#CMD ["./run.sh"]
 
 
 #CMD ["/usr/local/bin/cmd.sh"]
