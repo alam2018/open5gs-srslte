@@ -1,5 +1,5 @@
 #!/bin/sh
-#./setup.sh
+./setup.sh
 
 #cp mme.yml /etc/open5gs/
 
