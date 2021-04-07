@@ -55,7 +55,7 @@ RUN chmod +x setup.sh
 # Run the launcher script
 ADD run.sh /docker-entrypoint
 RUN chmod +x run.sh
-ENTRYPOINT ["bash","/run.sh"]
+ENTRYPOINT ["bash","/docker-entrypoint/run.sh"]
 #CMD ["./run.sh"]
 
 
