@@ -208,11 +208,12 @@ logger:
 mme:
     freeDiameter: /etc/freeDiameter/mme.conf
     s1ap:
-#      - addr: 127.0.0.2
-      - addr: 10.156.0.21
+      - addr: 127.0.0.2
+#      - addr: 10.156.0.21
 #        port: 2152
     gtpc:
-      - addr: 10.156.0.21
+      - addr: 127.0.0.2
+#      - addr: 10.156.0.21
 #        port: 2152
 #    s1ap:
 #      - addr: 10.156.0.6
