@@ -13,12 +13,18 @@ RUN apt-get update && \
 #   apt-get -yq dist-upgrade && \
    apt-get --no-install-recommends -qqy install python3-pip python3-setuptools python3-wheel ninja-build build-essential flex bison git libsctp-dev libgnutls28-dev libgcrypt-dev libssl-dev \
    libidn11-dev libmongoc-dev libbson-dev libyaml-dev libmicrohttpd-dev libcurl4-gnutls-dev meson iproute2 libnghttp2-dev \
-   iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd
+   iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd openssh-server openssh-clients boost scons
 
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
 RUN apt -y install open5gs
+
+RUN mkdir -p /data/db
+RUN chown -R mongodb:mongodb /data/db
+VOLUME ["/data/db"]
+EXPOSE 27017
+
 
 ADD /conf/mme.yaml /etc/open5gs/
 
