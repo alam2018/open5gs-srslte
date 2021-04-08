@@ -18,6 +18,7 @@ spec:
       labels:
         app: open5gs
     spec:
+      hostname: epc
       containers:
       - image: vcore-mme
         name: vcore-mme-container
