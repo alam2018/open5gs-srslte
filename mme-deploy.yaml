@@ -19,6 +19,7 @@ spec:
         app: open5gs
     spec:
       hostname: epc
+      hostNetwork: true
       containers:
       - image: vcore-mme
         name: vcore-mme-container
