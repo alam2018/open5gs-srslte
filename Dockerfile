@@ -15,13 +15,6 @@ RUN apt-get update && \
    libidn11-dev libmongoc-dev libbson-dev libyaml-dev libmicrohttpd-dev libcurl4-gnutls-dev meson iproute2 libnghttp2-dev \
    iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd
 
-
-#RUN apt -y install snapd
-#RUN apt-get update 
-#RUN systemctl status snapd.service
-#RUN snap install systemd-manager --beta
-
-
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
@@ -35,17 +28,6 @@ RUN chmod +x /docker-entrypoint/setup.sh
 #CMD ["./setup.sh"]
 
 
-#ENV container docker
-#RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
-#systemd-tmpfiles-setup.service ] || rm -f $i; done); \
-#rm -f /lib/systemd/system/multi-user.target.wants/*;\
-#rm -f /etc/systemd/system/*.wants/*;\
-#rm -f /lib/systemd/system/local-fs.target.wants/*; \
-#rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
-#rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
-#rm -f /lib/systemd/system/basic.target.wants/*;\
-#rm -f /lib/systemd/system/anaconda.target.wants/*;
-
 # Install anything. The service you want to start must be a SystemD service.
 #VOLUME [ “/sys/fs/cgroup” ]
 #CMD [“/usr/sbin/init”]
@@ -55,8 +37,5 @@ RUN chmod +x /docker-entrypoint/setup.sh
 # Run the launcher script
 ADD run.sh /docker-entrypoint/
 RUN chmod +x /docker-entrypoint/run.sh
-ENTRYPOINT ["/bin/bash", "/docker-entrypoint/run.sh"]
+#ENTRYPOINT ["/bin/bash", "/docker-entrypoint/run.sh"]
 #CMD ["./run.sh"]
-
-
-#CMD ["/usr/local/bin/cmd.sh"]
