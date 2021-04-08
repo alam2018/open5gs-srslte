@@ -3,7 +3,7 @@
 
 #cp mme.yml /etc/open5gs/
 
-/usr/bin/mongod --config /etc/mongodb.conf &
+./usr/bin/mongod --config /etc/mongodb.conf &
 sleep 5
 ./usr/bin/open5gs-mmed /etc/open5gs/mme.yaml &
 sleep 5
