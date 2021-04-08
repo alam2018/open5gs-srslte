@@ -1,26 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: busybox-deployment
+  name: nginx-deployment
   labels:
-    app: busybox
+    app: nginx
 spec:
   replicas: 3
 #  strategy: 
 #    type: RollingUpdate
   selector:
     matchLabels:
-      app: busybox
+      app: nginx
   template:
     metadata:
       labels:
-        app: busybox
+        app: nginx
     spec:
       containers:
-      - name: busybox
-        image: vcore-mme
+      - name: cnginx
+        image: nginx
 #        image: nginx
         imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 2152
+          hostPort: 2152
 #        command: ['sh', '-c']        
 #        command: ['sh', '-c', 'echo Container 1 is Running ; sleep 3600']
 #        resources: {}
