@@ -10,10 +10,10 @@ RUN apt-get update && apt-get -yq install cmake git libfftw3-dev libmbedtls-dev 
 #RUN apt-get update && apt-get -yq install git
 
 RUN apt-get update && \
-#   apt-get -yq dist-upgrade && \
+   apt-get -yq dist-upgrade && \
    apt-get --no-install-recommends -qqy install python3-pip python3-setuptools python3-wheel ninja-build build-essential flex bison git libsctp-dev libgnutls28-dev libgcrypt-dev libssl-dev \
    libidn11-dev libmongoc-dev libbson-dev libyaml-dev libmicrohttpd-dev libcurl4-gnutls-dev meson iproute2 libnghttp2-dev \
-   iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd openssh-server openssh-clients boost scons
+   iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd openssh-server 
 
  
 RUN add-apt-repository ppa:open5gs/latest
