@@ -21,7 +21,9 @@ RUN apt-get update && \
 #RUN apt -y install open5gs
 
 RUN git clone --recursive https://github.com/open5gs/open5gs && \
-   cd open5gs && meson build --prefix=/ && ninja -C build && cd build && ninja install && apt install mongodb
+   cd open5gs && meson build --prefix=/ && ninja -C build && cd build && ninja install 
+   
+RUN -y apt install mongodb
 
 RUN mkdir -p /data/db
 #VOLUME ["/data/db"]
