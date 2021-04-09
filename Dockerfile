@@ -16,9 +16,12 @@ RUN apt-get update && \
    iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd openssh-server 
 
  
-RUN add-apt-repository ppa:open5gs/latest
-RUN apt update
-RUN apt -y install open5gs
+#RUN add-apt-repository ppa:open5gs/latest
+#RUN apt update
+#RUN apt -y install open5gs
+
+RUN git clone --recursive https://github.com/open5gs/open5gs && \
+   cd open5gs && meson build --prefix=/ && ninja -C build && cd build && ninja install
 
 RUN mkdir -p /data/db
 RUN chown -R mongodb:mongodb /data/db
