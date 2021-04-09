@@ -7,7 +7,7 @@ echo "Starting MongoDB......."
 sleep 5s
 
 echo "Starting MME......."
-/usr/bin/open5gs-mmed /etc/open5gs/mme.yaml 
+/usr/bin/open5gs-mmed /etc/open5gs/mme.yaml &
 sleep 5s
 
 echo "Starting SPGWU......."
