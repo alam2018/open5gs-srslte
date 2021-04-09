@@ -23,7 +23,7 @@ RUN apt -y install open5gs
 RUN mkdir -p /data/db
 RUN chown -R mongodb:mongodb /data/db
 VOLUME ["/data/db"]
-EXPOSE 27017
+#EXPOSE 27017
 
 
 ADD /conf/mme.yaml /etc/open5gs/
