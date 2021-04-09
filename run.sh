@@ -6,6 +6,10 @@ echo "Starting MongoDB......."
 /usr/bin/mongod --config /etc/mongodb.conf &
 sleep 5s
 
+echo "Starting PCRF......."
+/usr/bin/open5gs-pcrfd /etc/open5gs/pcrf.yaml &
+sleep 5s
+
 echo "Starting MME......."
 /usr/bin/open5gs-mmed /etc/open5gs/mme.yaml &
 sleep 5s
@@ -26,9 +30,7 @@ sleep 5s
 #/usr/bin/open5gs-pcfd /etc/open5gs/pcf.yaml &
 #sleep 5s
 
-echo "Starting PCRF......."
-/usr/bin/open5gs-pcrfd /etc/open5gs/pcrf.yaml &
-sleep 5s
+
 
 
 echo "All core VNFs started..."
