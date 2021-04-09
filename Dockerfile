@@ -23,8 +23,8 @@ RUN apt-get update && \
 RUN git clone --recursive https://github.com/open5gs/open5gs && \
    cd open5gs && meson build --prefix=/ && ninja -C build && cd build && ninja install
 
-RUN mkdir -p /data/db
-RUN chown -R mongodb:mongodb /data/db
+#RUN mkdir -p /data/db
+#RUN chown -R mongodb:mongodb /data/db
 VOLUME ["/data/db"]
 #EXPOSE 27017
 
