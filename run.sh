@@ -4,9 +4,9 @@
 #cp mme.yml /etc/open5gs/
 
 /usr/bin/mongod --config /etc/mongodb.conf &
-#sleep 5
-/usr/bin/open5gs-mmed /etc/open5gs/mme.yaml 
-#sleep 5
+sleep 5s
+/usr/bin/open5gs-mmed /etc/open5gs/mme.yaml &
+sleep 5s
 #/usr/bin/open5gs-sgwcd /etc/open5gs/sgwc.yaml &
 #sleep 5
 #/usr/bin/open5gs-sgwud /etc/open5gs/sgwu.yaml &
