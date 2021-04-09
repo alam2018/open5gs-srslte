@@ -10,9 +10,9 @@ echo "Starting MME......."
 /usr/bin/open5gs-mmed /etc/open5gs/mme.yaml 
 sleep 5s
 
-#echo "Starting SPGWC......."
-#/usr/bin/open5gs-sgwcd /etc/open5gs/sgwc.yaml &
-#sleep 5s
+echo "Starting SPGWC......."
+/usr/bin/open5gs-sgwcd /etc/open5gs/sgwc.yaml &
+sleep 5s
 
 #echo "Starting SPGWU......."
 #/usr/bin/open5gs-sgwud /etc/open5gs/sgwu.yaml &
