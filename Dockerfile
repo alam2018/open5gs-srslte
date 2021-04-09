@@ -21,12 +21,12 @@ RUN apt-get update && \
 #RUN apt -y install open5gs
 
 RUN git clone --recursive https://github.com/open5gs/open5gs && \
-   cd open5gs && meson build --prefix=/ && ninja -C build && cd build && ninja install
+   cd open5gs && meson build --prefix=/ && ninja -C build && cd build && ninja install && apt install mongodb
 
-#RUN mkdir -p /data/db
-#RUN chown -R mongodb:mongodb /data/db
-VOLUME ["/data/db"]
-#EXPOSE 27017
+RUN mkdir -p /data/db
+#VOLUME ["/data/db"]
+RUN chown -R mongodb:mongodb /data/db
+EXPOSE 27017
 
 
 ADD /conf/mme.yaml /etc/open5gs/
