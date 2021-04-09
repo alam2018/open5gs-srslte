@@ -26,8 +26,8 @@ echo "Starting SPGWU......."
 #./usr/bin/open5gs-pcfd /etc/open5gs/pcf.yaml &
 #sleep 5s
 
-echo "Starting PCRF......."
-/usr/bin/open5gs-pcrfd /etc/open5gs/pcrf.yaml &
+#echo "Starting PCRF......."
+#/usr/bin/open5gs-pcrfd /etc/open5gs/pcrf.yaml &
 sleep 5s
 
 
