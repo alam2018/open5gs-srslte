@@ -28,7 +28,7 @@ echo "Starting MME......."
 
 #echo "Starting PCRF......."
 #/usr/bin/open5gs-pcrfd /etc/open5gs/pcrf.yaml &
-sleep 5s
+#sleep 5s
 
 
 echo "All core VNFs started..."
