@@ -16,10 +16,9 @@ RUN apt-get update && \
    iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd openssh-server 
 
  
-RUN apt-get update && \
-    add-apt-repository ppa:acetcom/open5gs && \
-    apt-get update && \
-    apt-get install -y open5gs
+RUN add-apt-repository ppa:open5gs/latest
+RUN apt update
+RUN apt -y install open5gs
 
 RUN mkdir -p /data/db
 RUN chown -R mongodb:mongodb /data/db
