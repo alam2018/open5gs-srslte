@@ -22,9 +22,9 @@ echo "Starting HSS......."
 /usr/bin/open5gs-hssd /etc/open5gs/hss.yaml &
 sleep 5s
 
-echo "Starting PCF......."
-./usr/bin/open5gs-pcfd /etc/open5gs/pcf.yaml &
-sleep 5s
+#echo "Starting PCF......."
+#./usr/bin/open5gs-pcfd /etc/open5gs/pcf.yaml &
+#sleep 5s
 
 echo "Starting PCRF......."
 /usr/bin/open5gs-pcrfd /etc/open5gs/pcrf.yaml &
