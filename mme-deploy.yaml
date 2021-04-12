@@ -18,15 +18,15 @@ spec:
       labels:
         app: open5gs
     spec:
-#      hostname: epc
-#      hostNetwork: true
+      hostname: epc
+      hostNetwork: true
       containers:
       - image: vcore-mme
         name: vcore-mme-container
         imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 36412
-          hostIP: 10.244.1.50
+#        ports:
+#        - containerPort: 36412
+#          hostIP: 10.244.1.50
 #        command: ['/bin/sh', '/docker-entrypoint/run.sh']
 #        command: ['/bin/sh', '/docker-entrypoint/deploy-test.sh']
 #        ports:
