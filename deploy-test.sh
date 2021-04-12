@@ -3,7 +3,8 @@
 
 #cp mme.yml /etc/open5gs/
 echo "Starting MongoDB......."
-mongod --config /etc/mongodb.conf &
+#mongod --config /etc/mongodb.conf &
+/usr/bin/mongod --unixSocketPrefix=/run/mongodb --config /etc/mongodb.conf
 sleep 5s
 
 echo "Starting PCRF......."
