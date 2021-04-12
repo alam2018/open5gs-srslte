@@ -25,7 +25,8 @@ spec:
         name: vcore-mme-container
         imagePullPolicy: IfNotPresent
         ports:
-        - hostIP: 10.244.1.50
+        - containerPort: 36412
+          hostIP: 10.244.1.50
 #        command: ['/bin/sh', '/docker-entrypoint/run.sh']
 #        command: ['/bin/sh', '/docker-entrypoint/deploy-test.sh']
 #        ports:
