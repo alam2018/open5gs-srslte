@@ -1,4 +1,13 @@
 #!/bin/sh
+
+_term() {
+  echo "Caught SIGTERM signal!"
+  kill -TERM "$child"
+}
+trap _term SIGTERM
+env
+
+
 /docker-entrypoint/setup.sh
 
 #cp mme.yml /etc/open5gs/
@@ -34,3 +43,7 @@ sleep 5s
 
 
 echo "All core VNFs started..."
+
+
+child=$!
+wait "$child"
