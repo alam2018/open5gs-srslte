@@ -26,7 +26,7 @@ RUN apt -y install open5gs
 RUN apt -y install mongodb
 
 RUN mkdir -p /data/db
-#VOLUME ["/data/db"]
+VOLUME ["/data/db"]
 RUN chown -R mongodb:mongodb /data/db
 #EXPOSE 27017
 
@@ -50,5 +50,5 @@ ADD run.sh /docker-entrypoint/
 RUN chmod +x /docker-entrypoint/run.sh
 ADD deploy-test.sh /docker-entrypoint/
 RUN chmod +x /docker-entrypoint/deploy-test.sh
-#ENTRYPOINT ["/bin/bash", "/docker-entrypoint/run.sh"]
+ENTRYPOINT ["/bin/bash", "/docker-entrypoint/run.sh"]
 
