@@ -28,10 +28,10 @@ RUN apt -y install mongodb
 RUN mkdir -p /data/db
 #VOLUME ["/data/db"]
 RUN chown -R mongodb:mongodb /data/db
-EXPOSE 27017
+#EXPOSE 27017
 
 
-ADD /conf/mme.yaml /etc/open5gs/
+#ADD /conf/mme.yaml /etc/open5gs/
 
 
 ADD setup.sh /docker-entrypoint/
