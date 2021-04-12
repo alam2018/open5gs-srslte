@@ -209,29 +209,16 @@ mme:
     freeDiameter: /etc/freeDiameter/mme.conf
     s1ap:
       - addr: 10.156.0.21
-#      - addr: 172.17.0.2
-#        port: 2152
     gtpc:
       - addr: 127.0.0.2
-#      - addr: 172.17.0.2
-#        port: 2152
-#    s1ap:
-#      - addr: 10.156.0.6
-#    gtpc:
-#      - addr: 10.156.0.6
-    gummei:
+    gummei: 
       plmn_id:
-#        mcc: 901
-#        mnc: 70
         mcc: 001
         mnc: 01
       mme_gid: 2
       mme_code: 1
     tai:
       plmn_id:
-#        mcc: 901
-#        mnc: 70
-#      tac: 1
         mcc: 001
         mnc: 01
       tac: 7
@@ -348,9 +335,6 @@ smf:
 #
 # parameter:
 #
-#  o Number of output streams per SCTP associations.
-#      sctp_streams: 30
-#
 #  o Disable use of IPv4 addresses (only IPv6)
 #      no_ipv4: true
 #
@@ -359,12 +343,6 @@ smf:
 #
 #  o Prefer IPv4 instead of IPv6 for estabishing new GTP connections.
 #      prefer_ipv4: true
-#
-#  o Enable Multicast traffic to the UE
-#      multicast: true
-#
-#  o Disable Stateless Address Autoconfiguration for IPv6
-#      no_slaac: true
 #
 #  o Use OAI UE
 #    - Remove HashMME in Security-mode command message
@@ -408,17 +386,23 @@ max:
 pool:
 
 #
-# sctp:
+# sockopt:
+#    no_delay : true
 #
-#  o heartbit_interval : 5000 (5secs)
-#  o rto_initial : 3000 (3secs)
-#  o rto_min : 1000 (1sec)
-#  o rto_max : 5000 (5secs)
-#  o max_num_of_ostreams : 30
-#  o max_num_of_istreams : 65535
-#  o max_attempts : 4
-#  o max_initial_timeout : 8000(8secs)
-#  o usrsctp_udp_port : 9899
+sockopt:
+
+#
+# sctp:
+#    heartbit_interval : 5000 (5secs)
+#    sack_delay : 200 (200ms)
+#    rto_initial : 3000 (3secs)
+#    rto_min : 1000 (1sec)
+#    rto_max : 5000 (5secs)
+#    max_num_of_ostreams : 30
+#    max_num_of_istreams : 65535
+#    max_attempts : 4
+#    max_initial_timeout : 8000(8secs)
+#    usrsctp_udp_port : 9899
 #
 sctp:
 
