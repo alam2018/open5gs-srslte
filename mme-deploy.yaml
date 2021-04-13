@@ -16,14 +16,15 @@ spec:
       labels:
         app: open5gs
     spec:
+      publicIP: 10.244.1.50
       hostname: epc
 #      hostNetwork: true
       containers:
       - image: vcore-mme
         name: vcore-mme-container
         imagePullPolicy: IfNotPresent
-#        ports:
-#        - containerPort: 1000-55000
+        ports:
+        - containerPort: 2000-50000
 #          protocol:
 #          - TCP
 #          - UDP
