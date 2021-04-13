@@ -24,12 +24,12 @@ spec:
       - image: vcore-mme
         name: vcore-mme-container
         imagePullPolicy: IfNotPresent
-#        ports:
-#        - containerPort: 2000 - 50000
-#          protocol:
-#          - TCP
-#          - UDP
-#          - SCTP
+        ports:
+        - containerPort: 1000 - 90000
+          protocol:
+          - TCP
+          - UDP
+          - SCTP
 #        command: ['/bin/sh', '/docker-entrypoint/run.sh']
 #        command: ['/bin/sh', '/docker-entrypoint/deploy-test.sh']
 #        ports:
