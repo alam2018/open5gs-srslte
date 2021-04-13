@@ -16,7 +16,7 @@ spec:
       labels:
         app: open5gs
     spec:
-      publicIP: 10.244.1.50
+#      publicIP: 10.244.1.50
       hostname: epc
 #      hostNetwork: true
       containers:

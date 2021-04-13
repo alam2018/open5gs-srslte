@@ -84,7 +84,7 @@ sgwu:
     pfcp:
       - addr: 127.0.0.6
     gtpu:
-      - addr: 10.244.1.55
+      - addr: 10.244.1.56
 #      - addr: 127.0.0.6
 #
 # sgwc:
