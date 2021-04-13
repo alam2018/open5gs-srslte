@@ -25,7 +25,7 @@ spec:
         name: vcore-mme-container
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 1000 - 90000
+        - containerPort: 1000 - 65000
           protocol:
           - TCP
           - UDP
