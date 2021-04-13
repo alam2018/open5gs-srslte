@@ -11,10 +11,8 @@ spec:
   selector:
     matchLabels:
       app: open5gs
-#  strategy: {}
   template:
     metadata:
-#      creationTimestamp: null
       labels:
         app: open5gs
     spec:
@@ -24,20 +22,16 @@ spec:
       - image: vcore-mme
         name: vcore-mme-container
         imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 1000-55000
-          protocol:
-          - TCP
-          - UDP
-          - SCTP
+#        ports:
+#        - containerPort: 1000-55000
+#          protocol:
+#          - TCP
+#          - UDP
+#          - SCTP
 #        command: ['/bin/sh', '/docker-entrypoint/run.sh']
 #        command: ['/bin/sh', '/docker-entrypoint/deploy-test.sh']
 #        ports:
-#        - containerPort: 2152
-#          hostPort: 2152
-#        command: ["/bin/sh"]
-#        args: ["/usr/bin/open5gs-mmed", "/etc/open5gs/mme.yaml"]
-#        resources: {}
+
         securityContext:
           capabilities:
             add:
