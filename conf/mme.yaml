@@ -208,7 +208,7 @@ logger:
 mme:
     freeDiameter: /etc/freeDiameter/mme.conf
     s1ap:
-      - addr: 10.244.1.53
+      - addr: 172.17.0.2
     gtpc:
       - addr: 127.0.0.2
     gummei: 
