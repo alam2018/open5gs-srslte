@@ -208,9 +208,9 @@ logger:
 mme:
     freeDiameter: /etc/freeDiameter/mme.conf
     s1ap:
-      - addr: eth0
+      - addr: 10.244.1.58
     gtpc:
-      - addr: eth0
+      - addr: 10.244.1.58
     gummei: 
       plmn_id:
         mcc: 001
