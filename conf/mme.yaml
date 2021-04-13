@@ -210,7 +210,7 @@ mme:
     s1ap:
       - addr: 10.156.0.21
     gtpc:
-      - addr: 10.156.0.21
+      - addr: 127.0.0.2
     gummei: 
       plmn_id:
         mcc: 001
