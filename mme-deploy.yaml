@@ -20,7 +20,8 @@ spec:
       hostname: epc
 #      hostNetwork: true
       containers:
-      - image: vcore-mme
+#      - image: vcore-mme
+      - image: cloudorc/vcore-mme:latest
         name: vcore-mme-container
         imagePullPolicy: IfNotPresent
 #        ports:
