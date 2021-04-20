@@ -10,6 +10,10 @@ env
 
 /docker-entrypoint/setup.sh
 
+ip4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+
+echo "Open5gs local interface ip: $ip4"
+
 #cp mme.yml /etc/open5gs/
 echo "Starting MongoDB......."
 /usr/bin/mongod --config /etc/mongodb.conf &
