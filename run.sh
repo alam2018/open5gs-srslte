@@ -14,6 +14,9 @@ ip4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
 
 echo "Open5gs local interface ip: $ip4"
 
+sed -i 's/LOCAL_INTERFACE_IP/'$ip4'/g' /etc/open5gs/mme.yaml
+sed -i 's/LOCAL_INTERFACE_IP/'$ip4'/g' /etc/open5gs/sgwu.yaml
+
 #cp mme.yml /etc/open5gs/
 echo "Starting MongoDB......."
 /usr/bin/mongod --config /etc/mongodb.conf &
