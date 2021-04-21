@@ -17,7 +17,7 @@ spec:
         app: open5gs
     spec:
 #      publicIP: 10.244.1.50
-      hostname: epc
+      hostname: open5gs
 #      hostNetwork: true
       containers:
       - image: vcore
