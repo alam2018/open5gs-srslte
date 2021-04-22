@@ -20,8 +20,8 @@ RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
 RUN apt -y install open5gs
 
-#RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
-#RUN apt install nodejs
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
+RUN apt install nodejs
 #RUN curl -sL https://open5gs.org/open5gs/assets/webui/install | bash
 
 ARG PACKAGE=open5gs
