@@ -13,12 +13,16 @@ RUN apt-get update && \
    apt-get -yq dist-upgrade && \
    apt-get --no-install-recommends -qqy install python3-pip python3-setuptools python3-wheel ninja-build build-essential flex bison git libsctp-dev libgnutls28-dev libgcrypt-dev libssl-dev \
    libidn11-dev libmongoc-dev libbson-dev libyaml-dev libmicrohttpd-dev libcurl4-gnutls-dev meson iproute2 libnghttp2-dev \
-   iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd openssh-server 
+   iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd openssh-server nano 
 
  
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
 RUN apt -y install open5gs
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN apt install nodejs
+RUN curl -sL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -
 
 #RUN git clone --recursive https://github.com/open5gs/open5gs && \
 #   cd open5gs && meson build --prefix=/ && ninja -C build && cd build && ninja install 
@@ -29,6 +33,7 @@ RUN mkdir -p /data/db
 VOLUME ["/data/db"]
 RUN chown -R mongodb:mongodb /data/db
 #EXPOSE 27017
+EXPOSE 3000
 
 
 ADD /conf/mme.yaml /etc/open5gs/
