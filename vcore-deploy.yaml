@@ -24,8 +24,8 @@ spec:
 #      - image: cloudorc/vcore-mme:latest
         name: vcore-mme-container
         imagePullPolicy: IfNotPresent
-#        ports:
-#        - containerPort: 2000-50000
+        ports:
+        - containerPort: 2000-50000
 #          protocol:
 #          - TCP
 #          - UDP
