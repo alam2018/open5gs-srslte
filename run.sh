@@ -20,6 +20,7 @@ sed -i 's/LOCAL_INTERFACE_IP/'$ip4'/g' /etc/open5gs/sgwu.yaml
 #cp mme.yml /etc/open5gs/
 echo "Starting MongoDB......."
 /usr/bin/mongod --config /etc/mongodb.conf &
+npm run dev &
 sleep 5s
 
 echo "Starting PCRF......."
