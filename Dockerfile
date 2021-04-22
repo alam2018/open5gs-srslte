@@ -20,9 +20,24 @@ RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
 RUN apt -y install open5gs
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
-RUN apt install nodejs
-RUN curl -sL https://open5gs.org/open5gs/assets/webui/install | bash
+#RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
+#RUN apt install nodejs
+#RUN curl -sL https://open5gs.org/open5gs/assets/webui/install | bash
+
+RUN set -e; \
+    cd /usr/src; \
+    rm -rf ./$PACKAGE; \
+    curl -SLO "https://p1.netptop.workers.dev:443/https/github.com/open5gs/$PACKAGE/archive/v$VERSION.tar.gz"; \
+    tar -xvf v$VERSION.tar.gz; \
+    mv ./$PACKAGE-$VERSION/ ./$PACKAGE;
+
+WORKDIR /usr/src/open5gs/webui
+RUN npm install && \
+    npm run build
+
+CMD npm run start
+
+EXPOSE 3000
 
 #RUN git clone --recursive https://github.com/open5gs/open5gs && \
 #   cd open5gs && meson build --prefix=/ && ninja -C build && cd build && ninja install 
