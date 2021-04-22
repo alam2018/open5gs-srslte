@@ -24,6 +24,8 @@ RUN apt -y install open5gs
 #RUN apt install nodejs
 #RUN curl -sL https://open5gs.org/open5gs/assets/webui/install | bash
 
+ARG PACKAGE=open5gs
+ARG VERSION=2.2.6
 RUN set -e; \
     cd /usr/src; \
     rm -rf ./$PACKAGE; \
