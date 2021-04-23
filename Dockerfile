@@ -5,9 +5,8 @@ MAINTAINER Md Ashraful Alam <anjonbd2007@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 
-# Dependencies for the UHD driver for the USRP hardware
+# Dependencies 
 RUN apt-get update && apt-get -yq install cmake git libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev libuhd-dev iproute2 libzmq3-dev libtool autoconf iptables net-tools
-#RUN apt-get update && apt-get -yq install git
 
 RUN apt-get update && \
    apt-get -yq dist-upgrade && \
@@ -15,7 +14,7 @@ RUN apt-get update && \
    libidn11-dev libmongoc-dev libbson-dev libyaml-dev libmicrohttpd-dev libcurl4-gnutls-dev meson iproute2 libnghttp2-dev \
    iptables iputils-ping tcpdump cmake curl gnupg meson software-properties-common systemd openssh-server nano 
 
- 
+#Install Open5gs 
 RUN add-apt-repository ppa:open5gs/latest
 RUN apt update
 RUN apt -y install open5gs
@@ -51,8 +50,10 @@ RUN chmod +x /docker-entrypoint/setup.sh
 # Run the launcher script
 ADD run.sh /docker-entrypoint/
 RUN chmod +x /docker-entrypoint/run.sh
-ENTRYPOINT ["/bin/bash", "/docker-entrypoint/run.sh"]
+
 ADD deploy-test.sh /docker-entrypoint/
 RUN chmod +x /docker-entrypoint/deploy-test.sh
+
+ENTRYPOINT ["/bin/bash", "/docker-entrypoint/run.sh"]
 #ENTRYPOINT ["/bin/bash", "/docker-entrypoint/run.sh"]
 

@@ -5,7 +5,7 @@ _term() {
   kill -TERM "$child"
 }
 trap _term SIGTERM
-env
+#env
 
 
 /docker-entrypoint/setup.sh
